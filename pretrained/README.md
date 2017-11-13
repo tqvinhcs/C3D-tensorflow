@@ -1,3 +1,3 @@
 ## Link to pretrained model: 
-Already converted to python format
+Download pretrained model to this folder
 https://www.dropbox.com/sh/7mesj1i9kh47ur5/AAAHarThi29Dwv5w5WJGtAGEa?dl=0
