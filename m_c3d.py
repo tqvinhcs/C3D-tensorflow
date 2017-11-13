@@ -7,7 +7,7 @@ import numpy as np
 import os
 
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 HEIGHT = 128
 WIDTH = 171
