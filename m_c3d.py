@@ -283,6 +283,7 @@ def demo_test():
 
                     print '%05d/%05d' % (idx, n_sample), 'acc: %.2f' % acc, ctime()
 
+                    # reset batch
                     bidx = 0
 
             print 'Acc: ', np.sum(accuracy) / n_sample
