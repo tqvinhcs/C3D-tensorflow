@@ -2,7 +2,8 @@
 C3D network implemented in tensorflow
 
 ## Link to pretrained model: 
+Already converted to python format
 https://www.dropbox.com/sh/7mesj1i9kh47ur5/AAAHarThi29Dwv5w5WJGtAGEa?dl=0
 
 ## References:
-https://github.com/dutran
+https://github.com/facebook/C3D
