@@ -95,12 +95,12 @@ def c3d_ucf101(inputs, training, weights=None):
                            kernel_initializer=tf.constant_initializer(weights[10]),
                            bias_initializer=tf.constant_initializer(weights[11]))
     net = tf.layers.max_pooling3d(inputs=net, pool_size=2, strides=2, padding='SAME')
-    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])  # manually padding here :)
+    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])
 
     net = tf.layers.conv3d(inputs=net, filters=512, kernel_size=3, activation=tf.nn.relu, padding='VALID',
                            kernel_initializer=tf.constant_initializer(weights[12]),
                            bias_initializer=tf.constant_initializer(weights[13]))
-    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])  # another manually padding here ;)
+    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])
     net = tf.layers.conv3d(inputs=net, filters=512, kernel_size=3, activation=tf.nn.relu, padding='VALID',
                            kernel_initializer=tf.constant_initializer(weights[14]),
                            bias_initializer=tf.constant_initializer(weights[15]))
@@ -162,12 +162,12 @@ def c3d_ucf101_finetune(inputs, training, weights=None):
                            kernel_initializer=tf.constant_initializer(weights[10]),
                            bias_initializer=tf.constant_initializer(weights[11]))
     net = tf.layers.max_pooling3d(inputs=net, pool_size=2, strides=2, padding='SAME')
-    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])  # manually padding here :)
+    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])
 
     net = tf.layers.conv3d(inputs=net, filters=512, kernel_size=3, activation=tf.nn.relu, padding='VALID',
                            kernel_initializer=tf.constant_initializer(weights[12]),
                            bias_initializer=tf.constant_initializer(weights[13]))
-    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])  # another manually padding here ;)
+    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])
     net = tf.layers.conv3d(inputs=net, filters=512, kernel_size=3, activation=tf.nn.relu, padding='VALID',
                            kernel_initializer=tf.constant_initializer(weights[14]),
                            bias_initializer=tf.constant_initializer(weights[15]))
