@@ -241,7 +241,7 @@ def demo_test():
 
     # Define the C3D model for UCF101
     # inputs = x - tf.constant([90.2, 97.6,  101.4], dtype=tf.float32, shape=[1, 1, 1, 1, 3])
-    inputs = x - tf.constant([96.6], dtype=tf.float32, shape=[1, 1, 1, 1, 1])
+    inputs = x - tf.constant([96.69], dtype=tf.float32, shape=[1, 1, 1, 1, 1])
     logits = c3d_ucf101(inputs=inputs, training=training, weights=weights)
 
     correct_opt = tf.equal(tf.argmax(logits, 1), y, name='correct')
@@ -308,7 +308,7 @@ def demo_finetune():
     training = tf.placeholder(tf.bool, name='training')
 
     # Define the C3D model for UCF101
-    inputs = x - tf.constant([96.0], dtype=tf.float32, shape=[1, 1, 1, 1, 1])
+    inputs = x - tf.constant([96.69], dtype=tf.float32, shape=[1, 1, 1, 1, 1])
     logits = c3d_ucf101_finetune(inputs=inputs, training=training, weights=weights)
     labels = tf.one_hot(y, 101, name='labels')
 
