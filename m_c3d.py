@@ -225,7 +225,7 @@ def read_test(tst_file):
     return voxel, np.float32(cls), np.float32(vid)
 
 
-def _demo_test():
+def demo_test():
     # Demo of testing on UCF101
     # Each line in test/val file is in form: path start_frame class video
     with open('./list/c3d_demo01.txt', 'r') as f:
@@ -257,17 +257,20 @@ def _demo_test():
             batch_x = np.zeros(shape=(BATCH_SIZE, FRAMES, CROP_SIZE, CROP_SIZE, CHANNELS), dtype=np.float32)
             batch_y = np.zeros(shape=BATCH_SIZE, dtype=np.float32)
 
-            tr_loss, bidx = [], 0
+            bidx = 0
             accuracy = []
             scores = []
-            vids = []
+            
             clss = []
+            vids = []
+            
             for idx, tst_file in enumerate(tst_files):
                 voxel, cls, vid = read_test(tst_file)
                 batch_x[bidx] = voxel
                 batch_y[bidx] = cls
-                vids.append(vid)
+                
                 clss.append(cls)
+                vids.append(vid)
 
                 bidx += 1
 
@@ -291,7 +294,7 @@ def _demo_test():
             sio.savemat('./c3d_demo_01.mat', mat)
 
 
-def _demo_finetune():
+def demo_finetune():
     # Demo of training on UCF101
     with open('./list/c3d_train01.txt', 'r') as f:
         lines = f.read().split('\n')
@@ -350,5 +353,5 @@ def _demo_finetune():
 
 
 if __name__ == '__main__':
-    _demo_test()
-    # _demo_finetune()
+    demo_test()
+    # demo_finetune()
