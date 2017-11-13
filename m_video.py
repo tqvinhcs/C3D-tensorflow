@@ -99,7 +99,7 @@ def _demo_read_clip():
             clip = np.flip(clip, axis=2)
         clips.append(np.hstack(clip))
 
-    # Saving to a single images, each row is each clip
+    # Saving to a single images, each row is a clip
     clips = np.vstack(clips).squeeze()
     print 'Min:', clips.min(), 'Max:', clips.max()
     imsave('clips.png', clips)
