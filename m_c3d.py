@@ -136,7 +136,7 @@ def c3d_ucf101_finetune(inputs, training, weights=None):
     :return: Output tensor for 101 classes
     """
 
-    # create c3d network with pretrained ucf101 weights
+    # create c3d network with pretrained Sports1M weights
     net = tf.layers.conv3d(inputs=inputs, filters=64, kernel_size=3, padding='SAME', activation=tf.nn.relu,
                            kernel_initializer=tf.constant_initializer(weights[0]),
                            bias_initializer=tf.constant_initializer(weights[1]))
