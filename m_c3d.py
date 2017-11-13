@@ -256,14 +256,14 @@ def demo_test():
 
             batch_x = np.zeros(shape=(BATCH_SIZE, FRAMES, CROP_SIZE, CROP_SIZE, CHANNELS), dtype=np.float32)
             batch_y = np.zeros(shape=BATCH_SIZE, dtype=np.float32)
-
-            bidx = 0
+            
             accuracy = []
             scores = []
             
             clss = []
             vids = []
             
+            bidx = 0
             for idx, tst_file in enumerate(tst_files):
                 voxel, cls, vid = read_test(tst_file)
                 batch_x[bidx] = voxel
