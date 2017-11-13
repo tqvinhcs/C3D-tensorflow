@@ -84,7 +84,7 @@ def _demo_read_clip():
     """
     Demo reading video clips then performing random crop and flip for augmentation
     """
-    frame_dir = '/mnt/disk/data/tqvinh/UCF-101/frames/Archery/v_Archery_g01_c01/'
+    frame_dir = './frames/Archery/v_Archery_g01_c01/'
     paths = [frame_dir + 'frm_%06d.jpg' % (f + 1) for f in range(0, 0 + 16)]
 
     # Random crop 16 times to see the differences
