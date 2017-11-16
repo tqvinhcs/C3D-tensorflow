@@ -39,10 +39,10 @@ def c3d(inputs, num_class, training):
     net = tf.layers.conv3d(inputs=net, filters=512, kernel_size=3, padding='SAME', activation=tf.nn.relu)
     net = tf.layers.conv3d(inputs=net, filters=512, kernel_size=3, padding='SAME', activation=tf.nn.relu)
     net = tf.layers.max_pooling3d(inputs=net, pool_size=2, strides=2, padding='SAME')
-    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])  # manually padding here :)
+    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])  
 
     net = tf.layers.conv3d(inputs=net, filters=512, kernel_size=3, activation=tf.nn.relu, padding='VALID')
-    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])  # another manually padding here ;)
+    net = tf.pad(net, [[0, 0], [1, 1], [1, 1], [1, 1], [0, 0]])  
     net = tf.layers.conv3d(inputs=net, filters=512, kernel_size=3, activation=tf.nn.relu, padding='VALID')
     net = tf.layers.max_pooling3d(inputs=net, pool_size=2, strides=2, padding='SAME')
 
